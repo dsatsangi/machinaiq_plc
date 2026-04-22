@@ -31,10 +31,16 @@ int Application::run() {
     parser.addOption(tcpPortOpt);
     parser.process(*this);
 
-    // Config path: CLI > /etc default > working dir
+    // Config path: CLI arg → /etc (Linux/Pi) → app data dir (dev/Mac)
     QString cfgPath = parser.value(configOpt);
-    if (cfgPath.isEmpty())
+    if (cfgPath.isEmpty()) {
+#ifdef Q_OS_LINUX
         cfgPath = "/etc/machinaiq_uplc/config.json";
+#else
+        cfgPath = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)
+                  + "/config.json";
+#endif
+    }
 
     loadConfig();
     ConfigManager::instance().load(cfgPath);
@@ -62,8 +68,11 @@ int Application::run() {
 }
 
 void Application::loadConfig() {
-    // Ensure config dir exists
+#ifdef Q_OS_LINUX
     QDir("/etc/machinaiq_uplc").mkpath(".");
+#else
+    QDir(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)).mkpath(".");
+#endif
 }
 
 void Application::startComms() {}

@@ -3,8 +3,12 @@
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     setWindowTitle("MachinaIQ UPLC");
-    // Full-screen on Pi touchscreen
+#ifdef Q_OS_LINUX
     showFullScreen();
+#else
+    resize(480, 800);  // portrait, matches Pi 7" display
+    show();
+#endif
 
     m_stack    = new QStackedWidget(this);
     m_home     = new HomeScreen(m_stack);
