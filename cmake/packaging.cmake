@@ -1,0 +1,27 @@
+set(CPACK_PACKAGE_NAME "machinaiq-uplc")
+set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
+set(CPACK_PACKAGE_CONTACT "support@machinaiq.io")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PROJECT_DESCRIPTION}")
+set(CPACK_PACKAGE_VENDOR "MachinaIQ")
+
+set(CPACK_GENERATOR "DEB")
+set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "armhf")
+set(CPACK_DEBIAN_PACKAGE_SECTION "industrial")
+set(CPACK_DEBIAN_PACKAGE_PRIORITY "optional")
+
+set(CPACK_DEBIAN_PACKAGE_DEPENDS
+    "libqt6core6 (>= 6.4), libqt6widgets6 (>= 6.4), libqt6network6 (>= 6.4), libqt6serialport6 (>= 6.4)"
+)
+
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "MachinaIQ <support@machinaiq.io>")
+
+set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA
+    "${CMAKE_SOURCE_DIR}/debian/postinst"
+    "${CMAKE_SOURCE_DIR}/debian/prerm"
+)
+
+set(CPACK_PACKAGE_FILE_NAME
+    "${CPACK_PACKAGE_NAME}_${CPACK_PACKAGE_VERSION}_${CPACK_DEBIAN_PACKAGE_ARCHITECTURE}"
+)
+
+include(CPack)

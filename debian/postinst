@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+# Create config dir if it doesn't exist
+if [ ! -d /etc/machinaiq_uplc ]; then
+    mkdir -p /etc/machinaiq_uplc
+fi
+
+# Install default config only on fresh install
+if [ ! -f /etc/machinaiq_uplc/config.json ]; then
+    cp /etc/machinaiq_uplc/config.json.dpkg-new /etc/machinaiq_uplc/config.json 2>/dev/null || true
+fi
+
+# Enable and start the systemd service
+if command -v systemctl >/dev/null 2>&1; then
+    systemctl daemon-reload
+    systemctl enable machinaiq-uplc.service
+    systemctl start  machinaiq-uplc.service || true
+fi
+
+exit 0

@@ -1,0 +1,11 @@
+Package: machinaiq-uplc
+Version: 1.0.0
+Section: industrial
+Priority: optional
+Architecture: armhf
+Depends: libqt6core6 (>= 6.4), libqt6widgets6 (>= 6.4), libqt6network6 (>= 6.4), libqt6serialport6 (>= 6.4)
+Maintainer: MachinaIQ <support@machinaiq.io>
+Description: MachinaIQ UPLC Industrial HMI
+ Touchscreen HMI for screwdriving station control on Raspberry Pi.
+ Communicates via Serial and TCP/IP; real-time screw count and
+ status display with full configuration hierarchy management.

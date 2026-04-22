@@ -1,0 +1,28 @@
+[Unit]
+Description=MachinaIQ UPLC Industrial HMI
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+
+# Qt platform — framebuffer (no X11 needed)
+Environment=QT_QPA_PLATFORM=linuxfb:fb=/dev/fb0
+Environment=QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS=/dev/input/event0
+Environment=QT_QPA_FONTDIR=/usr/share/fonts
+
+ExecStart=/usr/bin/machinaiq_uplc \
+    --config /etc/machinaiq_uplc/config.json \
+    --serial-port /dev/ttyUSB0 \
+    --baud 115200
+
+Restart=on-failure
+RestartSec=3s
+
+# Allow access to framebuffer and input devices
+SupplementaryGroups=video input dialout
+
+[Install]
+WantedBy=multi-user.target

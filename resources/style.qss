@@ -1,0 +1,343 @@
+/* ════════════════════════════════════════════════════════════════════════════
+   MachinaIQ UPLC — Industrial Dark Theme
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Base ──────────────────────────────────────────────────────────────────── */
+* {
+    font-family: "Roboto", "DejaVu Sans", sans-serif;
+    font-size: 13px;
+    color: #e0e0e0;
+    outline: none;
+}
+
+QMainWindow, QWidget#homeScreen, QWidget#settingsScreen {
+    background-color: #1a1f2e;
+}
+
+/* ── Header labels ─────────────────────────────────────────────────────────── */
+QLabel#stationId {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+QLabel#stationName {
+    font-size: 11px;
+    color: #90a0b0;
+    letter-spacing: 0.5px;
+}
+
+QLabel#sysStatus {
+    font-size: 13px;
+    font-weight: bold;
+    color: #90a0b0;
+}
+
+QLabel#sysStatus[online="true"] {
+    color: #4db6ac;
+}
+
+/* ── Status Banner ─────────────────────────────────────────────────────────── */
+StatusBanner {
+    border-radius: 6px;
+    background-color: #37474f;
+}
+
+StatusBanner[statusClass="ok"] {
+    background-color: #2e7d32;
+}
+
+StatusBanner[statusClass="nok"] {
+    background-color: #b71c1c;
+}
+
+StatusBanner[statusClass="running"] {
+    background-color: #e65100;
+}
+
+StatusBanner[statusClass="idle"] {
+    background-color: #37474f;
+}
+
+QLabel#statusBannerLabel {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* ── Data Cards ────────────────────────────────────────────────────────────── */
+QFrame#dataCard {
+    background-color: #242a38;
+    border: 1px solid #2e3a4e;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+QLabel#cardTitle {
+    font-size: 10px;
+    font-weight: bold;
+    color: #6a7a8a;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+QLabel#bigCount {
+    font-size: 52px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1;
+}
+
+QLabel#totalCount {
+    font-size: 22px;
+    color: #6a7a8a;
+    padding-top: 24px;
+}
+
+QLabel#medCount {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4fc3f7;
+}
+
+QLabel#cardSubtitle {
+    font-size: 10px;
+    color: #4a90b8;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+QLabel#programName {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+/* ── Toggle cards ──────────────────────────────────────────────────────────── */
+QFrame#toggleCard {
+    background-color: #242a38;
+    border: 1px solid #2e3a4e;
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+
+QLabel#toggleTitle {
+    font-size: 10px;
+    font-weight: bold;
+    color: #6a7a8a;
+    letter-spacing: 1px;
+}
+
+QLabel#modeLabel {
+    font-size: 12px;
+    font-weight: bold;
+    color: #90a0b0;
+}
+
+QPushButton#toggleButton {
+    background-color: #37474f;
+    border: 2px solid #546e7a;
+    border-radius: 14px;
+    min-width: 48px;
+    max-width: 48px;
+    min-height: 28px;
+    max-height: 28px;
+    color: #90a0b0;
+    font-size: 10px;
+}
+
+QPushButton#toggleButton:checked {
+    background-color: #1565c0;
+    border-color: #42a5f5;
+    color: #ffffff;
+}
+
+/* ── Channel selector ──────────────────────────────────────────────────────── */
+QPushButton#chButton {
+    background-color: #242a38;
+    border: 1px solid #2e3a4e;
+    border-radius: 6px;
+    color: #90a0b0;
+    font-size: 12px;
+    font-weight: bold;
+    min-height: 44px;
+    padding: 0;
+}
+
+QPushButton#chButton:checked {
+    background-color: #1565c0;
+    border: 2px solid #42a5f5;
+    color: #ffffff;
+}
+
+QPushButton#chButton:pressed {
+    background-color: #0d47a1;
+}
+
+/* ── Stat boxes ────────────────────────────────────────────────────────────── */
+QFrame#statBox {
+    background-color: #242a38;
+    border: 1px solid #2e3a4e;
+    border-radius: 8px;
+}
+
+QLabel#statLabel {
+    font-size: 11px;
+    color: #6a7a8a;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* ── RESET button ──────────────────────────────────────────────────────────── */
+QPushButton#resetButton {
+    background-color: #c62828;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 20px;
+    min-height: 48px;
+    letter-spacing: 1px;
+}
+
+QPushButton#resetButton:pressed {
+    background-color: #8b0000;
+}
+
+/* ── Icon / small buttons ──────────────────────────────────────────────────── */
+QPushButton#iconButton {
+    background-color: #2e3a4e;
+    border: none;
+    border-radius: 8px;
+    color: #90a0b0;
+    font-size: 18px;
+}
+
+QPushButton#iconButton:pressed {
+    background-color: #1565c0;
+    color: #ffffff;
+}
+
+/* ── Brand label ───────────────────────────────────────────────────────────── */
+QLabel#brandLabel {
+    font-size: 11px;
+    color: #4a5a6a;
+    font-weight: bold;
+}
+
+/* ── Settings screen ───────────────────────────────────────────────────────── */
+QLabel#screenTitle {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+QPushButton#secondaryButton {
+    background-color: #2e3a4e;
+    border: 1px solid #3e4e6e;
+    border-radius: 6px;
+    color: #90a0b0;
+    font-size: 13px;
+    padding: 6px 14px;
+    min-height: 36px;
+}
+
+QPushButton#secondaryButton:pressed {
+    background-color: #1565c0;
+    color: #ffffff;
+}
+
+QPushButton#dangerButton {
+    background-color: #37474f;
+    border: 1px solid #c62828;
+    border-radius: 6px;
+    color: #ef9a9a;
+    font-size: 13px;
+    padding: 6px 14px;
+    min-height: 36px;
+}
+
+QPushButton#dangerButton:pressed {
+    background-color: #c62828;
+    color: #ffffff;
+}
+
+QPushButton {
+    background-color: #1565c0;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 14px;
+    min-height: 36px;
+}
+
+QPushButton:pressed {
+    background-color: #0d47a1;
+}
+
+/* ── Config tree ───────────────────────────────────────────────────────────── */
+QTreeWidget#configTree {
+    background-color: #1e2535;
+    border: 1px solid #2e3a4e;
+    border-radius: 6px;
+    color: #e0e0e0;
+    selection-background-color: #1565c0;
+    font-size: 13px;
+}
+
+QTreeWidget#configTree::item {
+    padding: 6px 4px;
+    border-radius: 4px;
+}
+
+QTreeWidget#configTree::item:hover {
+    background-color: #263145;
+}
+
+/* ── Form fields ───────────────────────────────────────────────────────────── */
+QLineEdit, QSpinBox {
+    background-color: #1e2535;
+    border: 1px solid #2e3a4e;
+    border-radius: 6px;
+    color: #e0e0e0;
+    padding: 6px 8px;
+    min-height: 36px;
+    selection-background-color: #1565c0;
+}
+
+QLineEdit:focus, QSpinBox:focus {
+    border-color: #42a5f5;
+}
+
+QSpinBox::up-button, QSpinBox::down-button {
+    background-color: #2e3a4e;
+    border: none;
+    width: 20px;
+}
+
+/* ── Splitter ──────────────────────────────────────────────────────────────── */
+QSplitter::handle {
+    background-color: #2e3a4e;
+}
+
+/* ── Scrollbars ────────────────────────────────────────────────────────────── */
+QScrollBar:vertical {
+    background: #1a1f2e;
+    width: 8px;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical {
+    background: #2e3a4e;
+    border-radius: 4px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}

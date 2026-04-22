@@ -1,0 +1,47 @@
+{
+  "station": {
+    "id": "082",
+    "name": "Precision Assembly",
+    "screwdrivers": [
+      {
+        "id": "SD1",
+        "name": "Atlas Copco QST",
+        "patterns": [
+          {
+            "id": "M5_GROUND",
+            "name": "M5 Ground",
+            "channels": [
+              { "id": 1, "name": "Front Left",  "screwCount": 4 },
+              { "id": 2, "name": "Front Right", "screwCount": 4 },
+              { "id": 3, "name": "Rear Left",   "screwCount": 3 },
+              { "id": 4, "name": "Rear Right",  "screwCount": 3 }
+            ]
+          },
+          {
+            "id": "M6_BRACKET",
+            "name": "M6 Bracket",
+            "channels": [
+              { "id": 1, "name": "Top A",    "screwCount": 2 },
+              { "id": 2, "name": "Top B",    "screwCount": 2 },
+              { "id": 3, "name": "Bottom A", "screwCount": 2 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SD2",
+        "name": "Bosch GSR 18V",
+        "patterns": [
+          {
+            "id": "SIDE_PANEL",
+            "name": "Side Panel",
+            "channels": [
+              { "id": 1, "name": "Panel Left",  "screwCount": 6 },
+              { "id": 2, "name": "Panel Right", "screwCount": 6 }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
