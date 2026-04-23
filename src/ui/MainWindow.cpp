@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
 #ifdef Q_OS_LINUX
     showFullScreen();
 #else
-    resize(480, 800);  // portrait, matches Pi 7" display
+    setFixedSize(480, 800);  // locked portrait — matches Pi 7" touchscreen
     show();
 #endif
 

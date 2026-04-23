@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QFrame>
+#include <QPixmap>
 
 HomeScreen::HomeScreen(QWidget* parent) : QWidget(parent) {
     buildUi();
@@ -108,18 +109,45 @@ void HomeScreen::buildUi() {
     statsRow->addWidget(m_rejectBox);
     root->addLayout(statsRow);
 
-    // ── Footer ────────────────────────────────────────────────────────────────
-    auto* footerRow = new QHBoxLayout;
-    auto* brandLabel = new QLabel("MachinaIQ UPLC", this);
-    brandLabel->setObjectName("brandLabel");
+    // ── Footer: logo + contact | RESET ───────────────────────────────────────
+    auto* footerFrame = new QFrame(this);
+    footerFrame->setObjectName("footerFrame");
+    auto* footerRow = new QHBoxLayout(footerFrame);
+    footerRow->setContentsMargins(6, 4, 6, 4);
+    footerRow->setSpacing(8);
+
+    // Logo
+    m_logoLabel = new QLabel(footerFrame);
+    m_logoLabel->setObjectName("logoLabel");
+    QPixmap logo(":/bihani_logo.png");
+    if (!logo.isNull())
+        m_logoLabel->setPixmap(logo.scaled(44, 44, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    else
+        m_logoLabel->setText("BM");  // fallback text if PNG not found
+
+    // Contact info
+    auto* contactCol = new QVBoxLayout;
+    contactCol->setSpacing(1);
+    auto* phoneLabel = new QLabel("+91 85859 99048", footerFrame);
+    phoneLabel->setObjectName("contactLabel");
+    auto* emailLabel = new QLabel("bihanimarketing@gmail.com", footerFrame);
+    emailLabel->setObjectName("contactLabel");
+    contactCol->addWidget(phoneLabel);
+    contactCol->addWidget(emailLabel);
+
+    // Reset button
     m_resetBtn = new QPushButton("⚠  RESET", this);
     m_resetBtn->setObjectName("resetButton");
-    m_resetBtn->setMinimumHeight(48);
+    m_resetBtn->setMinimumHeight(52);
+    m_resetBtn->setMinimumWidth(110);
     connect(m_resetBtn, &QPushButton::clicked, this, &HomeScreen::onResetClicked);
-    footerRow->addWidget(brandLabel);
+
+    footerRow->addWidget(m_logoLabel);
+    footerRow->addLayout(contactCol);
     footerRow->addStretch();
     footerRow->addWidget(m_resetBtn);
-    root->addLayout(footerRow);
+
+    root->addWidget(footerFrame);
 }
 
 void HomeScreen::connectState() {

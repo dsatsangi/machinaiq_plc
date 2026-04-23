@@ -220,11 +220,20 @@ QPushButton#iconButton:pressed {
     color: #ffffff;
 }
 
-/* ── Brand label ───────────────────────────────────────────────────────────── */
-QLabel#brandLabel {
-    font-size: 11px;
-    color: #4a5a6a;
-    font-weight: bold;
+/* ── Footer ────────────────────────────────────────────────────────────────── */
+QFrame#footerFrame {
+    background-color: #1e2535;
+    border: 1px solid #2e3a4e;
+    border-radius: 8px;
+}
+
+QLabel#contactLabel {
+    font-size: 10px;
+    color: #5a7a9a;
+}
+
+QLabel#logoLabel {
+    padding: 2px;
 }
 
 /* ── Settings screen ───────────────────────────────────────────────────────── */

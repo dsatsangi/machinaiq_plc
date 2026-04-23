@@ -58,4 +58,5 @@ private:
     // Footer
     QPushButton* m_resetBtn;
     QPushButton* m_settingsBtn;
+    QLabel*      m_logoLabel;
 };
