@@ -1,5 +1,6 @@
 #include "StatusBanner.h"
 #include <QHBoxLayout>
+#include <QStyle>
 
 StatusBanner::StatusBanner(QWidget* parent) : QWidget(parent) {
     auto* lay = new QHBoxLayout(this);
