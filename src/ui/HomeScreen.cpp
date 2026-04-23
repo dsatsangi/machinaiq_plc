@@ -3,6 +3,7 @@
 #include "state/StateManager.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QStyle>
 #include <QLabel>
 #include <QPushButton>
 #include <QFrame>
