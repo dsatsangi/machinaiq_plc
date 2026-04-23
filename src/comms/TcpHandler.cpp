@@ -1,6 +1,7 @@
 #include "TcpHandler.h"
 #include <QDebug>
 #include <QMetaObject>
+#include <QThread>
 
 static constexpr int kReconnectMs = 3000;
 

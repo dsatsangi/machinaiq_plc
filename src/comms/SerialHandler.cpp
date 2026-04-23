@@ -1,6 +1,7 @@
 #include "SerialHandler.h"
 #include <QDebug>
 #include <QMetaObject>
+#include <QThread>
 
 SerialHandler::SerialHandler(QObject* parent) : QObject(parent) {
     connect(&m_port, &QSerialPort::readyRead,   this, &SerialHandler::onReadyRead);
