@@ -14,9 +14,10 @@ AppState StateManager::snapshot() const {
     return m_state;
 }
 
-// Helper: emit on main thread so UI slots need no special queued connection
+// Helper: emit on main thread so UI slots need no special queued connection.
+// [=] captures this + all local args by value (all signal params are value types).
 #define EMIT_MAIN(signal, ...) \
-    QMetaObject::invokeMethod(this, [this]{ emit signal(__VA_ARGS__); }, Qt::QueuedConnection)
+    QMetaObject::invokeMethod(this, [=]{ emit signal(__VA_ARGS__); }, Qt::QueuedConnection)
 
 void StateManager::updateCycleData(int current, int total, int timeMs) {
     { QMutexLocker lk(&m_mutex);
