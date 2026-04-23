@@ -119,7 +119,7 @@ void HomeScreen::buildUi() {
     // Logo
     m_logoLabel = new QLabel(footerFrame);
     m_logoLabel->setObjectName("logoLabel");
-    QPixmap logo(":/bihani_logo.png");
+    QPixmap logo(":/assets/bihani_logo.png");
     if (!logo.isNull())
         m_logoLabel->setPixmap(logo.scaled(44, 44, Qt::KeepAspectRatio, Qt::SmoothTransformation));
     else

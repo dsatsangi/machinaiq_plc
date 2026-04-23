@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>style.qss</file>
-        <file>bihani_logo.png</file>
+        <file>assets/bihani_logo.png</file>
     </qresource>
 </RCC>
